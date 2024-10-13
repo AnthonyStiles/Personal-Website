@@ -1,15 +1,16 @@
 
-import NavIcon from "./NavIcon";
-import NavItem from "./NavItem";
+import React from "react";
+import NavIcon from "./nav-icon";
+import NavItem from "./nav-item";
 
 export default function NavBar(){
     return(
-        <nav className="top-0 w-full fixed flex items-center bg-white">
+        <nav className="top-0 w-full fixed flex items-center bg-emerald-900 text-white">
             <div className="w-1/4 flex">
                 <a href="/">
-                    <div className="p-5">
-                        <div className="text-xl text-custom-orange font-bold">Anthony Stiles</div>
-                        <div className="font-semibold">Senior Software Developer</div>
+                    <div className="pl-5">
+                        <div className="font-bold">Anthony Stiles</div>
+                        <div className="font-semibold text-sm">Senior Software Developer</div>
                     </div>
                 </a>
             </div>
@@ -35,10 +36,14 @@ export default function NavBar(){
                     download={true} />
                 <NavIcon 
                     link={"https://www.linkedin.com/in/anthonystiles/"} 
-                    icon={"linkedin"} />
+                    icon={"linkedin"}
+                    tooltip={""}
+                    download={""} />
                 <NavIcon 
                     link={"https://github.com/AnthonyStiles"} 
-                    icon={"github"} />
+                    icon={"github"}
+                    tooltip={""}
+                    download={""} />
             </div>
         </nav>
     );

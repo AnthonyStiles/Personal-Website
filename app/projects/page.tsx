@@ -1,14 +1,14 @@
 import Image from 'next/image';
 
 export const metadata = {
-  title: "Anthony Stiles: Projects"
+  title: "Projects"
 }
 
 export default function Projects() {
     return (
       <div className="w-3/4 mx-auto flex flex-col gap-20 pb-5">
         <div className="flex flex-col gap-5">
-          <h2 className='text-xl text-custom-orange font-bold'>
+          <h2 className='text-xl font-bold'>
             Augmented Reality Car Manual
           </h2>
           <p>
@@ -21,7 +21,7 @@ export default function Projects() {
             <iframe 
               width="560" 
               height="315" 
-              src="https://www.youtube.com/embed/kolo-EheNao?si=VygptVi8kMD-BgRi" 
+              src="https://www.youtube.com/embed/q8MPNhPsi3A?si=fI0leYgCPSVi3_Tm" 
               title="YouTube video player" 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -31,7 +31,7 @@ export default function Projects() {
           </div>
         </div> 
         <div className="flex flex-col gap-5">
-          <h2 className='text-xl text-custom-orange font-bold'>
+          <h2 className='text-xl font-bold'>
             Multi-DB Script Generator
           </h2>
           <a className="text-blue-500 underline" href="https://github.com/AnthonyStiles/MultiDBScriptGenerator">GitHub Repository</a>
@@ -57,7 +57,7 @@ export default function Projects() {
           </div>
         </div>
         <div className="flex flex-col gap-5">
-          <h2 className='text-xl text-custom-orange font-bold'>
+          <h2 className='text-xl font-bold'>
             Car Game
           </h2>
           <p>
@@ -70,7 +70,7 @@ export default function Projects() {
             <iframe 
               width="560" 
               height="315" 
-              src="https://www.youtube.com/embed/uGi1nCZDN7s?si=v9kS1kG7jh2E-T5r" 
+              src="https://www.youtube.com/embed/vf73RXRnXK0?si=dBknB48OfVrBytJm" 
               title="YouTube video player" 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

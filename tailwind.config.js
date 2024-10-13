@@ -7,9 +7,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'custom-cream' : '#FFFCF2',
+        'custom-cream' : '#ebe7e3',
         'custom-orange' : '#EB5E28',
-        'custom-gray' : '#403D39'
+        'custom-gray' : '#403D39',
+        'custom-blue' : '#041e3a'
       }
     },
   },

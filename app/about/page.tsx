@@ -1,12 +1,12 @@
 export const metadata = {
-  title: "Anthony Stiles: About / CV"
+  title: "About / CV"
 }
 
 export default function About() {
     return (
       <div className="w-3/4 mx-auto flex flex-col gap-20 pb-5">
         <div className="flex flex-col gap-5">
-          <h2 className='text-xl text-custom-orange font-bold'>
+          <h2 className='text-xl font-bold'>
             Personal Statement
           </h2>
           <p>
@@ -14,7 +14,7 @@ export default function About() {
           </p>
         </div>
         <div className="flex flex-col gap-5">
-          <h2 className='text-xl text-custom-orange font-bold'>
+          <h2 className='text-xl font-bold'>
             Experience
           </h2>
           <h3 className="font-semibold">
@@ -56,7 +56,7 @@ export default function About() {
           </ul>
         </div>
         <div className="flex flex-col gap-5">
-          <h2 className='text-xl text-custom-orange font-bold'>
+          <h2 className='text-xl font-bold'>
             Qualifications
           </h2>
           <div className="flex gap-20">
