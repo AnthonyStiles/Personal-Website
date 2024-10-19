@@ -40,7 +40,7 @@ export async function send(prevState: State, formData: FormData){
     const { name, email, message } = validatedFields.data;
 
     if(!Blacklist.includes(email)){
-        sendEmail(name, email, message);
+        await sendEmail(name, email, message);
     }
 
     return {
@@ -50,7 +50,7 @@ export async function send(prevState: State, formData: FormData){
     }
 }
 
-function sendEmail(name, email, message){
+async function sendEmail(name, email, message){
     const transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
@@ -66,5 +66,5 @@ function sendEmail(name, email, message){
         text: message
     };
 
-    transporter.sendMail(options);
+    await transporter.sendMail(options);
 }
