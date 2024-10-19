@@ -1,12 +1,12 @@
 "use client";
 
-import { sendMessage, State } from "../lib/actions";
+import { send, State } from "../lib/emailer";
 import React from "react";
 import { useFormState } from "react-dom";
 
 export default function Form(){
     const initialState: State = { message: null, errors: {} };
-    const [state, formAction] = useFormState(sendMessage, initialState);
+    const [state, formAction] = useFormState(send, initialState);
 
     if(state.success){
       return (

@@ -3,6 +3,8 @@
 import nodemailer from 'nodemailer';
 import { z } from 'zod';
 
+const Blacklist = [ "submissions@searchindex.site" ];
+
 const FormSchema = z.object({
     name: z.string().min(1, "Name must be provided."),
     email: z.string().min(1, "Email must be provided.").email("Email must be in the correct format."),
@@ -21,14 +23,12 @@ export type State = {
 
 const SendMessage = FormSchema.omit({});
 
-export async function sendMessage(prevState: State, formData: FormData){
+export async function send(prevState: State, formData: FormData){
     const validatedFields = SendMessage.safeParse({
         name: formData.get("name"),
         email: formData.get("email"),
         message: formData.get("message")
     });
-
-    console.log(validatedFields);
 
     if(!validatedFields.success){
         return {
@@ -39,6 +39,18 @@ export async function sendMessage(prevState: State, formData: FormData){
 
     const { name, email, message } = validatedFields.data;
 
+    if(!Blacklist.includes(email)){
+        sendEmail(name, email, message);
+    }
+
+    return {
+        errors: {},
+        message: "",
+        success: true
+    }
+}
+
+function sendEmail(name, email, message){
     const transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
@@ -54,13 +66,5 @@ export async function sendMessage(prevState: State, formData: FormData){
         text: message
     };
 
-    const result = await transporter.sendMail(options);
-
-    console.log(result);
-
-    return {
-        errors: {},
-        message: "",
-        success: true
-    }
+    transporter.sendMail(options);
 }
