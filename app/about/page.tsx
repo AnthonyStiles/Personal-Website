@@ -13,7 +13,7 @@ export default function About() {
             A self-motivated and focused full stack software developer with over 6 years of experience of migrating and creating new solutions for a live product using Microsoft technologies. Collaborating with cross functional teams, I’ve helped improve performance, security and functionality as well as improving development efficiency. My aim is to broaden my skills in order to take the next step in my career.
           </p>
         </div>
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-10">
           <h2 className='text-xl font-bold'>
             Experience
           </h2>
@@ -59,8 +59,10 @@ export default function About() {
           <h2 className='text-xl font-bold'>
             Qualifications
           </h2>
-          <div className="flex gap-20">
-            <span>2020</span>
+          <div className="flex">
+            <div className="w-1/6">
+              2020
+            </div>
             <div className="flex flex-col">
               <span className="font-semibold">
                 Bachelor of Science with Honours in Computer Science (First Class)
@@ -70,8 +72,10 @@ export default function About() {
               </span>
             </div>
           </div>
-          <div className="flex gap-20">
-            <span>2016</span>
+          <div className="flex">
+            <div className="w-1/6">
+              2016
+            </div>
             <div className="flex flex-col">
               <span className="font-semibold">
                 BTEC Level 3 Extended Diploma in Information Technology (Distinction)
