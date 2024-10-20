@@ -21,10 +21,8 @@ export type State = {
     success?:boolean;
 }
 
-const SendMessage = FormSchema.omit({});
-
 export async function send(prevState: State, formData: FormData){
-    const validatedFields = SendMessage.safeParse({
+    const validatedFields = FormSchema.safeParse({
         name: formData.get("name"),
         email: formData.get("email"),
         message: formData.get("message")

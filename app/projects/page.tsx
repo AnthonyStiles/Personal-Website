@@ -47,12 +47,14 @@ export default function Projects() {
               alt="A picture showing the output of the tool. It shows the tool and a config file in a folder with an output file."
               width={500}
               height={0}
+              className='rounded'
             />
             <Image
               src="/projects/multidbscriptgenerator/file.png"
               alt="A picture showing the contents of the output file of the tool."
               width={600}
               height={0}
+              className='rounded'
             />
           </div>
         </div>
