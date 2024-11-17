@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import "./globals.css";
 import NavBar from "./ui/nav/nav-bar";
-import { lato, inter } from "./ui/fonts";
 
 export const metadata: Metadata = {
   title: {
@@ -14,13 +13,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
-        <div className="flex flex-col h-screen">
-          <NavBar />
-          <main className="mt-24 grow flex items-center">
-            {children}
-          </main>
-        </div>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+      </head>
+      <body>
+        <NavBar />
+        {children}
       </body>
     </html>
   );

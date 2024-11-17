@@ -4,51 +4,77 @@ import { send, State } from "../lib/emailer";
 import React from "react";
 import { useFormState } from "react-dom";
 
-export default function Form(){
-    const initialState: State = { message: null, errors: {} };
-    const [state, formAction] = useFormState(send, initialState);
+export default function Form() {
+  const initialState: State = { message: null, errors: {} };
+  const [state, formAction] = useFormState(send, initialState);
 
-    if(state.success){
-      return (
-        <p>Thanks for getting in touch. I will get back to you as soon as possible.</p>
-      )
-    }
-
-    function getInputClass(isTextArea, showError){
-      return `block ${isTextArea ? "w-1/2" : "w-1/3"} p-2 bg-gray-100 ${showError ? "border-red-600 border" : ""} rounded`;
-    }
-
+  if (state.success) {
     return (
-      <>
-        <p>Please complete the form below and I will get back to you as soon as possible. Thank you.</p>
-        <div>
-          <form noValidate action={formAction}>
-            <div className="mb-5">
-              <label htmlFor="name">Name</label>
-              <input className={getInputClass(false, state.errors?.name?.length > 0)} type="text" id="name" name="name"></input>
-              {state.errors?.name && (
-                <span className="text-red-500 rounded">{state.errors.name[0]}</span>
-              )}
+      <div className="content-wrapper">
+        <p className="text">Thanks for getting in touch. I will get back to you as soon as possible.</p>
+      </div>
+    )
+  }
+
+  return (
+    <div>
+      <div className="content-wrapper">
+        <p className="text">
+          Please complete the form below and I will get back to you as soon as possible. Thank you.
+        </p>
+      </div>
+
+      <form noValidate action={formAction}>
+
+        <div className="content-wrapper">
+          <label htmlFor="name">
+            <div className="text">
+              Name
             </div>
-            <div className="mb-5">
-              <label htmlFor="email">Email</label>
-              <input className={getInputClass(false, state.errors?.email?.length > 0)} type="text" id="email" name="email"></input>
-              {state.errors?.email && (
-                <span className="text-red-500 rounded">{state.errors.email[0]}</span>
-              )}
-            </div>
-            <div className="mb-5">
-              <label htmlFor="message">Message</label>
-              <textarea rows={4} className={getInputClass(true, state.errors?.message?.length > 0)} id="message" name="message"></textarea>
-              {state.errors?.message && (
-                <span className="text-red-500 rounded">{state.errors.message[0]}</span>
-              )}
-            </div>
-            <button className="border border-black hover:bg-slate-500 rounded" type="submit">
-              <span className="p-3">Send</span>
-            </button>
-          </form>
+          </label>
+          <div className="form-control-container">
+            <input className={`form-control ${state.errors?.name?.length > 0 && "form-control-error"}`} type="text" id="name" name="name"></input>
+          </div>
+          {state.errors?.name && (
+            <span className="form-control-error-message">{state.errors.name[0]}</span>
+          )}
         </div>
-      </>
-    );
+
+        <div className="content-wrapper">
+          <label htmlFor="email">
+            <div className="text">
+              Email
+            </div>
+          </label>
+          <div className="form-control-container">
+            <input className={`form-control ${state.errors?.email?.length > 0 && "form-control-error"}`} type="text" id="email" name="email"></input>
+          </div>
+          {state.errors?.email && (
+            <span className="form-control-error-message">{state.errors.email[0]}</span>
+          )}
+        </div>
+
+        <div className="content-wrapper">
+          <label htmlFor="message">
+            <div className="text">
+              Message
+            </div>
+          </label>
+          <div className="form-control-container">
+            <textarea rows={4} className={`form-control ${state.errors?.message?.length > 0 && "form-control-error"}`} id="message" name="message"></textarea>
+          </div>
+          {state.errors?.message && (
+            <span className="form-control-error-message">{state.errors.message[0]}</span>
+          )}
+        </div>
+
+        <div className="content-wrapper">
+          <button className="text form-submit-button" type="submit">
+            Send
+          </button>
+        </div>
+
+      </form>
+    </div>
+  );
 }

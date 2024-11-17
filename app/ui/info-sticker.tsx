@@ -4,13 +4,13 @@ import { IoIosConstruct } from "react-icons/io";
 
 export default function InfoSticker({icon, primaryText, secondaryText, tertiaryText}: { icon: string, primaryText: string, secondaryText: string, tertiaryText: string }){
     return (
-        <div className='flex items-center'>
-            {icon === "education" && <FaGraduationCap size={52} />}
-            {icon === "engineer" && <IoIosConstruct size={52} />}
-            <div className='flex flex-col pl-5'>
-              {primaryText && <span>{primaryText}</span>} 
-              {secondaryText && <span>{secondaryText}</span>} 
-              {tertiaryText && <span>{tertiaryText}</span>}
+        <div className="info-sticker-container">
+            {icon === "education" && <FaGraduationCap size={64} className='info-sticker-icon' />}
+            {icon === "engineer" && <IoIosConstruct size={64} className='info-sticker-icon' />}
+            <div className="info-sticker-text text">
+                {primaryText && <div>{primaryText}</div>} 
+                {secondaryText && <div>{secondaryText}</div>} 
+                {tertiaryText && <div>{tertiaryText}</div>}
             </div>
         </div>
     );

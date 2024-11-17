@@ -6,8 +6,8 @@ export const metadata = {
 
   export default function Projects() {
     return (
-      <div className="w-3/4 mx-auto flex flex-col gap-10 pb-5">
+      <main className="page-wrapper-centered">
         <Form />
-      </div>
+      </main>
     );
   }
