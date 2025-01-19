@@ -64,5 +64,5 @@ async function sendEmail(name, email, message){
         text: message
     };
 
-    await transporter.sendMail(options);
+    await transporter.sendMail(options); 
 }
