@@ -3,7 +3,7 @@
 import nodemailer from 'nodemailer';
 import { z } from 'zod';
 
-const Blacklist = [ "submissions@searchindex.site" ];
+const Blacklist = [ "submissions@searchindex.site", "joannariggs94@gmail.com" ];
 
 const FormSchema = z.object({
     name: z.string().min(1, "Name must be provided."),
