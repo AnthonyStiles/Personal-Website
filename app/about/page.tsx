@@ -20,7 +20,7 @@ export default function About() {
           Experience
         </h1>
         <h2 className="sub-title text-block">
-          Pinewood.AI, Birmingham
+          <a href="https://pinewood.ai/automotive-intelligence-platform/" target="_blank">Pinewood.AI</a>, Birmingham
         </h2>
         <div>
           <div className="text-block">
@@ -31,7 +31,6 @@ export default function About() {
               July 2022 - Present
             </div>
           </div>
-
           <div className="text-block">
             <h2 className="sub-title">
               Graduate / Software Developer
@@ -40,7 +39,6 @@ export default function About() {
               May 2020 - July 2022
             </div>
           </div>
-
           <div className="text-block">
             <h2 className="sub-title">
               Placement Student
@@ -49,35 +47,85 @@ export default function About() {
               June 2018 - May 2020
             </div>
           </div>
-
         </div>
         <p className="text text-block">
-          Full stack development of an award winning automotive dealership management system. Utilising the following technologies: SQL Server, C#, .NET (Framework and Core), Web API, Razor, HTML, CSS, JavaScript (Vanilla, jQuery), Azure, Azure DevOps, Git. Contributing to work in the platform team maintaining the foundations of the main product.
+          Award winning, enterprise level automotive dealership management system. Full stack software development in a scrumban agile environment.
         </p>
+        <div className="text-block">
+          <h2 className="sub-title">Full-stack Feature Implementation</h2>
+          <ul className="list">
+            <li className="text">
+              Leading projects from estimation to completion within set timeframes collaborating with multidisciplinary teams.
+            </li>
+            <li className="text">
+              Implementing Web API endpoints, working with a C# layered business layer and implementing T-SQL.
+            </li>
+            <li className="text">
+              Consuming APIs in a Razor Pages application using C# and creating functionality with HTML and JavaScript.
+            </li>
+            <li className="text">
+              Examples: Major system reports, configuration pages, workshop planning system, HTML document editor.
+            </li>
+          </ul>
+        </div>
+        <div className="text-block">
+          <h2 className="sub-title">Internal Framework Maintenance</h2>
+          <ul className="list">
+            <li className="text">
+              Creating and maintaining an internal framework (Page model base classes, Layouts, Tag / HTML Helpers, CSS, JavaScript) focussed on improving development speed and standardisation.
+            </li>
+            <li className="text">
+              Specialised in validation (jQuery Unobtrusive, Middleware, Filters), created attributes, implemented email domain validation via web request, virus scanning.
+            </li>
+          </ul>
+        </div>
+        <div className="text-block">
+          <h2 className="sub-title">Ad Hoc / Legacy System Maintenance</h2>
+          <ul className="list">
+            <li className="text">
+              Architectural changes to migrate from .NET Framework 4.7.2 to .NET 9
+            </li>
+            <li className="text">
+              Implementing data heavy import routines using factory and template method patterns.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="text-content-wrapper">
+        <h1 className='title'>
+          Main Technologies
+        </h1>
         <ul className="list">
-          <li className="text text-block">
-            Involved in a major refactor of backend code handling images to allow for migration to Azure.
+          <li className="text">
+            C# 
           </li>
-          <li className="text text-block">
-            Collaborated with the UX team to redevelop a critical JavaScript heavy page used by hundreds of dealers to upload vehicle images.
+          <li className="text">
+            .NET (Framework and Core) 
           </li>
-          <li className="text text-block">
-            Directly involved in the creation of a new front end for the flagship product. Our team migrated an area of the system while developing an internal framework intended for use by other teams.
+          <li className="text">
+            JavaScript (Vanilla, jQuery) 
           </li>
-          <li className="text text-block">
-            Improved performance by optimising SQL data retrieval and minimising API data transfer.
+          <li className="text">
+            Web API 
           </li>
-          <li className="text text-block">
-            Lead work around validation including the creation of client and server side validation rules using jQuery unobtrusive validation, middleware for virus scanning and validation of email domains.
+          <li className="text">
+            Razor Pages 
           </li>
-          <li className="text text-block">
-            Mentored multiple junior developers and worked with them to improve their skills.
+          <li className="text">
+            HTML
           </li>
-          <li className="text text-block">
-            Implemented code analysis rules to enforce coding standards.
+          <li className="text">
+            CSS 
           </li>
-          <li className="text text-block">
-            Collaborated with the UX team to redesign a planning system for dealers to plan jobs for a workshop.
+          <li className="text">
+            Azure
+          </li>
+          <li className="text">
+            Azure DevOps
+          </li>
+          <li className="text">
+            Git 
           </li>
         </ul>
       </div>
@@ -109,7 +157,6 @@ export default function About() {
           </div>
         </div>
       </div>
-      
     </main>
   );
 }
