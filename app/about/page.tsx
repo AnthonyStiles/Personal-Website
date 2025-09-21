@@ -11,8 +11,7 @@ export default function About() {
           Personal Statement
         </h1>
         <p className="text text-block">
-          A self-motivated and focused full stack software developer with over seven years of experience of migrating and creating new solutions for a live product using Microsoft technologies. Collaborating with cross functional teams, I’ve helped improve performance, security and functionality as well as improving development efficiency. My aim is to broaden my skills in order to take the next step in my career.
-        </p>
+          With over seven years of experience working across the full stack of an enterprise level system I am a senior software developer who thrives in solving difficult problems and has improved performance, security and functionality as well as improving development efficiency across the department. I’m a keen developer who enjoys learning new technologies either at work or while working on personal projects. My aim is to continue to build high quality software people can use to achieve their goals while learning new things and improving.        </p>
       </div>
 
       <div className="text-content-wrapper">
