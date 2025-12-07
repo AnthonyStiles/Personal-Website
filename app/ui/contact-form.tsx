@@ -2,11 +2,11 @@
 
 import { send, State } from "../lib/emailer";
 import React from "react";
-import { useFormState } from "react-dom";
+import { useActionState } from "react";
 
 export default function Form() {
   const initialState: State = { message: null, errors: {} };
-  const [state, formAction] = useFormState(send, initialState);
+  const [state, formAction] = useActionState(send, initialState);
 
   if (state.success) {
     return (
