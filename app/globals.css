@@ -223,6 +223,11 @@ body{
     color: #000;
 }
 
+.form-submit-button:disabled{
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
 @media only screen and (min-width: 1000px){
     .nav-bar{
         top: 0;
@@ -311,7 +316,7 @@ body{
         padding: 10px 0 10px;
     }
 
-    .form-submit-button:hover{
+    .form-submit-button:enabled:hover{
         background-color: rgb(100 116 139);
         cursor: pointer;
     }

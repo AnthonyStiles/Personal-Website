@@ -1,13 +1,27 @@
 "use client";
 
 import { send, State } from "../lib/emailer";
-import React from "react";
-import { useActionState } from "react";
+import React, {useEffect, useActionState, useRef} from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Form() {
   const initialState: State = { message: null, errors: {} };
   const [state, formAction] = useActionState(send, initialState);
 
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  useEffect(() => {
+    if(state.message){
+      recaptchaRef.current?.reset();
+    }
+  }, [state]);
+
+  const [captchaToken, setCaptchaToken] = React.useState<string>("");
+  const [isFormValid, setIsFormValid] = React.useState<boolean>(false);
+
+  useEffect(() => {
+    handleChange();
+  }, [ captchaToken ]);
+  
   if (state.success) {
     return (
       <div className="content-wrapper">
@@ -16,6 +30,16 @@ export default function Form() {
     )
   }
 
+  function handleChange() {
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const message = document.getElementById("message");
+    const token = document.getElementById("token");
+    
+    const isFormValid = name.value != "" && email.value != "" && message.value != "" && token.value != "";
+    setIsFormValid(isFormValid);
+  }
+  
   return (
     <div>
       <div className="content-wrapper">
@@ -24,7 +48,15 @@ export default function Form() {
         </p>
       </div>
 
-      <form noValidate action={formAction}>
+      {state.message && (
+          <div className="content-wrapper">
+            <p className="text form-control-error-message">
+              {state.message}
+            </p>
+          </div>
+      )}
+
+      <form noValidate action={formAction} onChange={handleChange}>
 
         <div className="content-wrapper">
           <label htmlFor="name">
@@ -69,10 +101,20 @@ export default function Form() {
         </div>
 
         <div className="content-wrapper">
-          <button className="text form-submit-button" type="submit">
+          <ReCAPTCHA
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY}
+              onChange={(token) => { setCaptchaToken(token ?? ""); handleChange();}}
+              ref={recaptchaRef}
+          />
+        </div>
+
+        <div className="content-wrapper">
+          <button className="text form-submit-button" type="submit" disabled={ !isFormValid }>
             Send
           </button>
         </div>
+
+        <input type="hidden" name="token" id="token" value={captchaToken} />
 
       </form>
     </div>
