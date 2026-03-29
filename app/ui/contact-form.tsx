@@ -31,10 +31,10 @@ export default function Form() {
   }
 
   function handleChange() {
-    const name = document.getElementById("name");
-    const email = document.getElementById("email");
-    const message = document.getElementById("message");
-    const token = document.getElementById("token");
+    const name = document.getElementById("name") as HTMLInputElement;
+    const email = document.getElementById("email") as HTMLInputElement;
+    const message = document.getElementById("message") as HTMLTextAreaElement;
+    const token = document.getElementById("token") as HTMLInputElement;
     
     const isFormValid = name.value != "" && email.value != "" && message.value != "" && token.value != "";
     setIsFormValid(isFormValid);
